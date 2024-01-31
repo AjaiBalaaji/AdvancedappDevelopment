@@ -1,0 +1,39 @@
+.MyBookingsEvent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    background-attachment: fixed;
+    gap: 5vh;
+    /* width: 208.1vb; */
+    background-color: rgb(224, 218, 218);
+    /* background-image: url(https://rare-gallery.com/mocahbig/426076-photography-closeup-chess-pawns-simple-background.jpg); */
+    background-size: cover;
+  }
+  .EventBookingtable {
+    /* background-color: rgba(230, 237, 231, 0.805); */
+    height: 200px;
+    width: 1000px;
+    text-align: center; 
+    line-height: 50px; 
+    /* border-radius: 10px; */
+  }
+  
+  .grid-container {
+    display: grid;
+    color:black;
+    grid-template-columns: 240px 340px 240px;
+    margin-top: 22px;
+    margin-left: 27px;
+    flex-wrap: wrap;
+    font-size: 17px;
+  } 
+  .CancelBooking
+  {
+    background-color: rgb(207, 63, 63);
+  }
+  .Bookotherevent
+  {
+    background-color: rgb(14, 145, 82);
+  }

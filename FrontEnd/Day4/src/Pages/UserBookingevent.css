@@ -1,0 +1,78 @@
+.UserBookingevent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 26px;
+    background-color: rgb(198, 217, 234);
+    /* opacity: 0.5; */
+    border-radius: 25px;
+
+    
+}
+.BookeventTitle
+{
+    background-image: url('https://i.makeagif.com/media/5-05-2023/Pp0hEU.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+    border-radius: 10px;
+    background-position: center;
+    object-fit: cover;
+    margin-top: 20%;
+
+}
+.Bookevent {
+    max-width: 500px;
+    /* margin-top: 90%; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Bookevent h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Bookevent input[type="text"],
+.Bookevent input[type="date"],
+.Bookevent input[type="number"],
+.Bookevent textarea {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #100909;
+    background-color: #b8c6db;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #100909;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.Bookevent textarea {
+    resize: vertical;
+    height: 100px;
+    color: #100909;
+}
+
+.Bookeventbutton {
+    background-color: #0a8499;
+    color: white;
+    width: 50%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; 
+}
+
+.Bookeventbutton:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); 
+}
