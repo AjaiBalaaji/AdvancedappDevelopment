@@ -1,0 +1,119 @@
+.AdminviewEvents {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 80%; 
+  /* height: 40%; */
+  margin-top: 20px;
+  /* background-color: #f44336; */
+}
+.font-italic{
+  font-size: 20px;
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  /* background: rgba(0,0,0,.375) url(https://cdn-icons-png.freepik.com/256/8094/8094123.png?uid=R84011927&ga=GA1.1.1868093049.1706085498) no-repeat 14px 14px; */
+  background-size: cover;
+  text-indent: 1em;
+  display: inline-block;
+  border: 0 none;
+  width: 60%;
+  height: 3em;
+  border-radius: 3em;
+  -webkit-transition: .3s;
+  transition: .3s;
+  outline: none;
+  padding: 1em 1.5em;
+  cursor: pointer;
+  -webkit-appearance: none;
+  font-weight: inherit;
+  font-size: 20px;
+  font-family: inherit;
+  color: #999;
+  vertical-align: baseline;
+}
+
+.search-input:hover, .search-input:focus {
+  background: #fff ;
+  background-size: cover;
+  color: #333; 
+}
+
+.search-input:focus {
+  width: 140%;
+  cursor: text;
+}
+
+.Noevents {
+  text-align: center;
+}
+
+.Noevents img {
+  max-width: 100%;
+  height: auto;
+}
+
+.Eventsavailable {
+  display: flex;
+  flex-direction: row;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.img-fluid {
+  width: 30%; /* Adjust based on your preference */
+  object-fit: cover; /* Ensures the image covers the area */
+}
+
+.Event-Info {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.font-italic {
+  margin: 5px 0;
+}
+
+.butt {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px;
+}
+
+.button-1, .button-2 {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.UpdateButton {
+  background-color: #2e9b31; /* Green */
+  color: white;
+  font-size: 15px;
+}
+
+.button-2 {
+  background-color: #f44336; /* Red */
+  color: white;
+  font-size: 15px;
+}
+
+/* Additional styles for hover effects on buttons */
+.UpdateButton:hover, .button-2:hover {
+  opacity: 0.8;
+}

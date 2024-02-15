@@ -1,0 +1,166 @@
+// package com.event.event.config;
+
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.context.annotation.Bean;
+// import org.springframework.context.annotation.Configuration;
+// import org.springframework.security.authentication.AuthenticationProvider;
+// import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+// import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+// import org.springframework.security.config.http.SessionCreationPolicy;
+// import org.springframework.security.web.SecurityFilterChain;
+// import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+// import org.springframework.web.cors.CorsConfiguration;
+// import org.springframework.web.cors.CorsConfigurationSource;
+// import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+// import lombok.RequiredArgsConstructor;
+
+// @Configuration
+// @EnableWebSecurity
+// @RequiredArgsConstructor
+// public class SecurityConfiguration {
+
+//     // 3.
+//     @Autowired
+//     private final JwtAuthenticationFilter jwtAuthFilter;
+//     // 4.
+//     @Autowired
+//     private final AuthenticationProvider authenticationProvider;
+
+//     @Bean
+//     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+//         httpSecurity
+//                 .cors()
+//                 .and()
+//                 .csrf()
+//                 .disable()
+//                 .authorizeHttpRequests()
+//                 .requestMatchers("/api/v1/auth/**")
+//                 .permitAll()
+//                 .anyRequest()
+//                 .authenticated()
+//                 .and()
+//                 .sessionManagement()
+//                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                 .and()
+//                 .authenticationProvider(authenticationProvider) // 1. Here we need to tell spring which authentication
+//                                                                 // provider we are going to use
+//                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class); // 2. Adding a
+//                                                                                              // jwtAuthFilter
+//                                                                                              // before
+//                                                                                              // UsernamePasswordAuthenticationFilter
+//         return httpSecurity.build();
+//     }
+//     @Bean
+//     public CorsConfigurationSource corsConfigurationSource(){
+//         CorsConfiguration configuration =new CorsConfiguration();
+//         configuration.addAllowedOrigin("*");
+//         configuration.addAllowedMethod("*");
+//         configuration.addAllowedHeader("*");
+//         UrlBasedCorsConfigurationSource source=new UrlBasedCorsConfigurationSource();
+//         source.registerCorsConfiguration("/**", configuration);
+//         return source;
+//     }
+
+// }
+
+
+package com.event.event.config;
+
+import static com.event.event.utils.MyConstant.HEADERS;
+import static com.event.event.utils.MyConstant.METHODS;
+import static com.event.event.utils.MyConstant.ORIGINS;
+import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import lombok.RequiredArgsConstructor;
+
+@Configuration
+@EnableWebSecurity
+@RequiredArgsConstructor
+public class SecurityConfiguration {
+
+    private final AuthenticationProvider authenticationProvider;
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf(AbstractHttpConfigurer::disable)
+                .cors(cors -> corsConfigurationSource())
+                .authorizeHttpRequests(
+                        authorize -> authorize.requestMatchers(
+                                "/api/v1/auth/**",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html/",
+                                "/bookevent",
+                                "/addevent/**",
+                                "/bookevent/**",
+                                "/v3/api-docs/**")
+                                .permitAll()
+                                .anyRequest()
+                                .authenticated())
+                .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
+                .authenticationProvider(authenticationProvider)
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+        return http.build();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
+        corsConfiguration.addAllowedOrigin("*");
+        corsConfiguration.addAllowedHeader("*");
+        corsConfiguration.addAllowedMethod("*");
+        // corsConfiguration.setAllowCredentials(true);
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", corsConfiguration);
+        return source;
+    }
+}
+
+// package com.event.event.config;
+
+// import org.springframework.context.annotation.Bean;
+// import org.springframework.context.annotation.Configuration;
+// import org.springframework.web.cors.CorsConfiguration;
+// import org.springframework.web.cors.CorsConfigurationSource;
+// import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+// import java.util.Arrays;
+// import java.util.List;
+
+// @Configuration
+// public class SecurityConfiguration {
+
+//     private static final List<String> ORIGINS = List.of("http://localhost:8080"); // Customize as needed
+//     private static final List<String> HEADERS = Arrays.asList("Authorization", "Cache-Control", "Content-Type");
+//     private static final List<String> METHODS = Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS");
+
+//     @Bean
+//     public CorsConfigurationSource corsConfigurationSource() {
+//         CorsConfiguration corsConfiguration = new CorsConfiguration().applyPermitDefaultValues();
+        
+//         // Set custom allowed origins, headers, and methods from constants or configuration
+//         corsConfiguration.setAllowedOrigins(ORIGINS); // Use specific origins instead of "*"
+//         corsConfiguration.setAllowedHeaders(HEADERS);
+//         corsConfiguration.setAllowedMethods(METHODS);
+        
+//         // Allow credentials if necessary
+//         // corsConfiguration.setAllowCredentials(true);
+
+//         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//         source.registerCorsConfiguration("/**", corsConfiguration);
+//         return source;
+//     }
+// }

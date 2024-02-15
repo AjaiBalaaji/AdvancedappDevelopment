@@ -1,0 +1,110 @@
+.MyBookingsEvent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    background-attachment: fixed;
+    gap: 5vh;
+    /* width: 208.1vb; */
+    /* background-color: rgb(233, 180, 180); */
+    border-radius: 25px;
+    /* background-image: url(https://rare-gallery.com/mocahbig/426076-photography-closeup-chess-pawns-simple-background.jpg); */
+    background-size: cover;
+    margin: 20px;
+  }
+  .EventBookingtable {
+    /* background-color: aqua; */
+    height: 200px;
+    width: 1000px;
+    text-align: center; 
+    line-height: 50px; 
+    /* border-radius: 10px; */
+  }
+  
+  .MyBookings-container {
+    display: grid;
+    color:black;
+    grid-template-columns: 240px 340px 240px;
+    margin-top: 22px;
+    margin-left: 27px;
+    flex-wrap: wrap;
+    font-size: 17px;
+    border-radius: 25px;
+  } 
+  .CancelBooking
+  {
+    background-color: rgb(207, 63, 63);
+  }
+  .Bookotherevent
+  {
+    background-color: rgb(14, 145, 82);
+  }
+  .backq11 {
+    padding: 20px;
+    /* background-color: aqua; */
+  }
+  
+  .MyBookingseventcontainer {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      margin-top: 2vh;
+      /* border-radius: 5px; */
+      background-color: rgb(178, 178, 240);
+      border-radius: 25px;
+  }
+  .MyBookingseventcontainerimage {
+    max-width: 50%; 
+    max-height: 200px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+    object-fit: cover; 
+  }
+  
+  .MyBookingseventcontainer h2 {
+    margin-top: 0;
+    font-size: 30px;
+  }
+  
+  .MyBookingseventcontainer p {
+    margin: 5px 0;
+    font-size: 20px;
+  }
+  
+  .MyBookingseventcontainer button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px;
+  }
+  .MyBookingseventcontainer button:hover{
+    transform: scale(1.1);
+  }
+  
+  .MyBookingseventcontainer button.pe {
+    background-color: #ff9800; /* orange */
+  }
+  
+  .MyBookingseventcontainer button.con1 {
+    background-color: #4caf50; /* green */
+  }
+  
+  .MyBookingseventcontainer button.re1 {
+    background-color: #f44336; /* red */
+  }
+  .ve-img211{
+    height: 33px;
+    padding-top: 5px;
+    padding-right: 1px;
+    cursor: pointer;
+  }

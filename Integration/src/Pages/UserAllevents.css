@@ -1,0 +1,93 @@
+.AdminviewEventscontainer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 12vh;
+    /* border-radius: 5px; */
+    /* background-color: rgb(178, 178, 240); */
+    border-radius: 25px;
+  }
+  .AdminviewEventscontainer p{
+    font-size: 15px;
+  }
+  
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    background-color: #fff; /* Background color for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    overflow: hidden; /* Ensures nothing spills outside the rounded corners */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+  }
+  
+  .section:hover {
+    transform: scale(1.02); /* Slightly enlarges the container on hover */
+  }
+  
+  .section .image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 25px;
+    padding: 10px; /* Ensure images cover the area nicely */
+  }
+  
+  .content, .content-reverse {
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .content-reverse {
+    text-align: right;
+  }
+  
+  .ViewEventTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+  }
+  
+  .BookEventButton button {
+    background-color: #4088d5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 90px;
+  }
+  
+  .BookEventButton button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* For the reverse sections */
+  .section.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .section, .section.reverse {
+      flex-direction: column;
+    }
+  
+    .content, .content-reverse {
+      text-align: center;
+    }
+  
+    .section .image, .section .content {
+      width: 100%;
+    }
+  
+    .section {
+      margin-bottom: 20px;
+    }
+  }
+  

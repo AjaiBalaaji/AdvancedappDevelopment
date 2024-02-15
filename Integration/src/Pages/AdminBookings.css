@@ -1,0 +1,82 @@
+.AcceptBooking
+{
+    background-color: rgb(145, 209, 188);
+    width: 20%;
+}
+.RejectBooking
+{
+    background-color: rgb(156, 225, 202);
+}
+.AdminBookings-container
+{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-size: 30px;
+}
+.backq1 {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .events-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .event-box {
+    border: 1px solid #ddd;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px; /* Adjust based on your preference */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    background-color: #ffffff; /* Light theme */
+  }
+  
+  .event-box:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+  }
+  
+  .event-box h3 {
+    color: #333; /* Darker text for better readability */
+    margin-bottom: 15px;
+  }
+  
+  .event-box p {
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #555; /* Lighter text for descriptions */
+  }
+  
+  .status {
+    margin-top: 15px;
+    padding: 8px 10px;
+    width: calc(100% - 20px); /* Considering padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Indicates it's selectable */
+    font-size: 16px;
+  }
+  
+  .status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .status.confirmed {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .status.rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  

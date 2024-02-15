@@ -1,0 +1,109 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  
+}
+
+html {
+  font-size: 62.5%;
+}
+
+li {
+  list-style: none;
+  font-size: 1.6rem; 
+}
+a{
+  text-decoration: none;
+
+}
+a:hover {
+  color: rgb(232, 216, 224);
+  border-bottom: 3px solid rgb(116, 116, 196);
+}
+.Link {
+  text-decoration: none; /* Remove default link underline */
+  color: rgb(10, 2, 2);
+  font-size: 1.6rem; /* Link color */
+}
+
+/* Navbar styles */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 8vh; 
+  background: rgb(0, 33, 65); 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100vw; 
+  z-index: 1000; 
+  transition: background 0.3s ease;
+  font-size: 1.6rem;
+}
+
+.Navbarlogo {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold; 
+}
+
+.Nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem; 
+}
+
+.nav__toggler {
+  display: none; 
+  cursor: pointer; 
+}
+
+.nav__toggler div {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: rgb(204, 204, 204); /* Toggler line color */
+  transition: 0.3s ease-in;
+}
+
+/* Media Query for Mobile View */
+@media screen and (max-width: 768px) {
+  .nav__toggler {
+    display: block; /* Show toggler on small screens */
+  }
+
+  .Nav-menu {
+    position: fixed;
+    top: 8vh;
+    right: 0;
+    height: 92vh;
+    width: 60vw; /* Width of the menu */
+    background: rgb(0, 33, 65);
+    flex-direction: column; /* Stack menu items vertically */
+    transform: translateX(100%); /* Hide menu off-screen */
+    transition: 0.5s ease-in;
+  }
+
+  .Nav-menu.show {
+    transform: translateX(0); /* Show menu */
+  }
+
+  .nav__active {
+    background: rgb(0, 33, 65);
+  }
+
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .line2 {
+    opacity: 0;
+  }
+
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
